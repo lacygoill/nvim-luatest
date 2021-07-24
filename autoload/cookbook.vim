@@ -58,6 +58,14 @@ const DB: dict<dict<dict<any>>> = {
             }],
             desc: 'test whether a number is prime',
         },
+        MathCycleNumber: {
+            sources: [{
+                funcname: 'cookbook#math#cycleNumber#main',
+                path: 'autoload/cookbook/math/cycleNumber.vim',
+                filetype: 'vim'
+            }],
+            desc: 'make a number cycle between 2 values',
+        },
         MathReadNumber: {
             sources: [{
                 funcname: 'cookbook#math#readNumber#main',
