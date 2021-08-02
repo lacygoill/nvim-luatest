@@ -268,10 +268,12 @@ def PopulateQflWithRecipes(lang: string) #{{{2
         # We  need to  *also* inspect  the quickfix  id; otherwise,  the conceal
         # could be re-applied to a new qf window displaying a different qfl.
         #}}}
-        autocmd BufWinEnter <buffer> if index(qfid, getqflist({id: 0})) >= 0
-            |     ConcealNoise()
-            |     InstallMapping()
-            | endif
+        autocmd BufWinEnter <buffer> {
+            if index(qfid, getqflist({id: 0})) >= 0
+                ConcealNoise()
+                InstallMapping()
+            endif
+        }
     augroup END
     nnoremap <buffer><nowait> <CR> <Cmd>call <SID>QfRunRecipe()<CR>
 enddef
